@@ -240,6 +240,7 @@
                         <constraints>
                             <constraint firstItem="mIT-LZ-aPr" firstAttribute="leading" secondItem="D9n-f2-Pl6" secondAttribute="leading" constant="20" id="Bj5-Ym-NV0"/>
                             <constraint firstItem="IWi-qv-jty" firstAttribute="leading" secondItem="D9n-f2-Pl6" secondAttribute="leading" constant="20" id="CzZ-UV-tMs"/>
+                            <constraint firstItem="D9n-f2-Pl6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IWi-qv-jty" secondAttribute="trailing" symbolic="YES" id="HKD-bT-mPD"/>
                             <constraint firstItem="EBk-Kb-SV2" firstAttribute="leading" secondItem="D9n-f2-Pl6" secondAttribute="leading" constant="20" id="KZS-iw-r5g"/>
                             <constraint firstItem="7Oh-My-6xM" firstAttribute="leading" secondItem="D9n-f2-Pl6" secondAttribute="leading" constant="20" id="h1D-K3-EZH"/>
                             <constraint firstItem="IWi-qv-jty" firstAttribute="top" secondItem="EBk-Kb-SV2" secondAttribute="bottom" constant="8" id="iS2-nh-AaJ"/>
@@ -247,6 +248,7 @@
                             <constraint firstItem="7Oh-My-6xM" firstAttribute="top" secondItem="D9n-f2-Pl6" secondAttribute="top" constant="36" id="k1j-wN-hn7"/>
                             <constraint firstItem="mIT-LZ-aPr" firstAttribute="top" secondItem="IWi-qv-jty" secondAttribute="bottom" constant="8" id="kWb-gr-XHc"/>
                             <constraint firstItem="D9n-f2-Pl6" firstAttribute="trailing" secondItem="mIT-LZ-aPr" secondAttribute="trailing" constant="63" id="pUP-K7-FGg"/>
+                            <constraint firstItem="D9n-f2-Pl6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Oh-My-6xM" secondAttribute="trailing" symbolic="YES" id="rZK-7I-3y5"/>
                             <constraint firstItem="EBk-Kb-SV2" firstAttribute="top" secondItem="7Oh-My-6xM" secondAttribute="bottom" constant="8" id="wWv-uv-cc1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D9n-f2-Pl6"/>
