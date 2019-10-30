@@ -1,0 +1,6 @@
+framework module Pods_YiZhang_JingweiJian_ProjectImplementation {
+  umbrella header "Pods-YiZhang-JingweiJian-ProjectImplementation-umbrella.h"
+
+  export *
+  module * { export * }
+}

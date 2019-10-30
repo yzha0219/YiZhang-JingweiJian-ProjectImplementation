@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31EF57B0F56AEF6ADEE50FA6 /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */; };
 		46FF043523695DE200AB8CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043423695DE100AB8CF5 /* AppDelegate.swift */; };
 		46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043623695DE200AB8CF5 /* SceneDelegate.swift */; };
 		46FF043923695DE200AB8CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043823695DE200AB8CF5 /* ViewController.swift */; };
@@ -26,6 +27,9 @@
 		46FF044023695DE300AB8CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46FF044323695DE300AB8CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46FF044523695DE300AB8CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YiZhang_JingweiJian_ProjectImplementation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; sourceTree = "<group>"; };
+		E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31EF57B0F56AEF6ADEE50FA6 /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				46FF043323695DE100AB8CF5 /* YiZhang-JingweiJian-ProjectImplementation */,
 				46FF043223695DE100AB8CF5 /* Products */,
+				B9C67426DDCAEB54B0B28188 /* Pods */,
+				D5EB7005F0D2AFB9B0E9AEAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = "YiZhang-JingweiJian-ProjectImplementation";
 			sourceTree = "<group>";
 		};
+		B9C67426DDCAEB54B0B28188 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */,
+				E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D5EB7005F0D2AFB9B0E9AEAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46FF044823695DE300AB8CF5 /* Build configuration list for PBXNativeTarget "YiZhang-JingweiJian-ProjectImplementation" */;
 			buildPhases = (
+				F57081AF5B564ECCB99187A3 /* [CP] Check Pods Manifest.lock */,
 				46FF042D23695DE100AB8CF5 /* Sources */,
 				46FF042E23695DE100AB8CF5 /* Frameworks */,
 				46FF042F23695DE100AB8CF5 /* Resources */,
+				B57398CD0546046A883E05D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B57398CD0546046A883E05D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F57081AF5B564ECCB99187A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YiZhang-JingweiJian-ProjectImplementation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46FF042D23695DE100AB8CF5 /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		46FF044923695DE300AB8CF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +374,7 @@
 		};
 		46FF044A23695DE300AB8CF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
