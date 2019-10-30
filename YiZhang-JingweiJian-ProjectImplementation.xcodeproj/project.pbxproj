@@ -3,30 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		31EF57B0F56AEF6ADEE50FA6 /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */; };
+		467609CC2369A92A00708588 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CB2369A92A00708588 /* AboutViewController.swift */; };
+		467609CE2369AF0C00708588 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CD2369AF0C00708588 /* FeedViewController.swift */; };
+		467609D02369AFE800708588 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CF2369AFE800708588 /* AmuseViewController.swift */; };
+		46B703D023698EFF00231CB1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B703CF23698EFF00231CB1 /* PhotoViewController.swift */; };
 		46FF043523695DE200AB8CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043423695DE100AB8CF5 /* AppDelegate.swift */; };
 		46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043623695DE200AB8CF5 /* SceneDelegate.swift */; };
-		46FF043923695DE200AB8CF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043823695DE200AB8CF5 /* ViewController.swift */; };
 		46FF043C23695DE200AB8CF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF043A23695DE200AB8CF5 /* Main.storyboard */; };
 		46FF043F23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043D23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodeld */; };
 		46FF044123695DE300AB8CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FF044023695DE300AB8CF5 /* Assets.xcassets */; };
 		46FF044423695DE300AB8CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF044223695DE300AB8CF5 /* LaunchScreen.storyboard */; };
+		46FF044E2369718500AB8CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF044D2369718500AB8CF5 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		467609CB2369A92A00708588 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		467609CD2369AF0C00708588 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		467609CF2369AFE800708588 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		46B703CF23698EFF00231CB1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		46FF043123695DE100AB8CF5 /* YiZhang-JingweiJian-ProjectImplementation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YiZhang-JingweiJian-ProjectImplementation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FF043423695DE100AB8CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46FF043623695DE200AB8CF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		46FF043823695DE200AB8CF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46FF043B23695DE200AB8CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46FF043E23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YiZhang_JingweiJian_ProjectImplementation.xcdatamodel; sourceTree = "<group>"; };
 		46FF044023695DE300AB8CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46FF044323695DE300AB8CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46FF044523695DE300AB8CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46FF044D2369718500AB8CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YiZhang_JingweiJian_ProjectImplementation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; sourceTree = "<group>"; };
 		E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,12 +75,16 @@
 			children = (
 				46FF043423695DE100AB8CF5 /* AppDelegate.swift */,
 				46FF043623695DE200AB8CF5 /* SceneDelegate.swift */,
-				46FF043823695DE200AB8CF5 /* ViewController.swift */,
 				46FF043A23695DE200AB8CF5 /* Main.storyboard */,
 				46FF044023695DE300AB8CF5 /* Assets.xcassets */,
 				46FF044223695DE300AB8CF5 /* LaunchScreen.storyboard */,
 				46FF044523695DE300AB8CF5 /* Info.plist */,
 				46FF043D23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodeld */,
+				46FF044D2369718500AB8CF5 /* HomeViewController.swift */,
+				46B703CF23698EFF00231CB1 /* PhotoViewController.swift */,
+				467609CB2369A92A00708588 /* AboutViewController.swift */,
+				467609CD2369AF0C00708588 /* FeedViewController.swift */,
+				467609CF2369AFE800708588 /* AmuseViewController.swift */,
 			);
 			path = "YiZhang-JingweiJian-ProjectImplementation";
 			sourceTree = "<group>";
@@ -83,7 +95,6 @@
 				74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */,
 				E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,10 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46FF043923695DE200AB8CF5 /* ViewController.swift in Sources */,
+				467609CC2369A92A00708588 /* AboutViewController.swift in Sources */,
 				46FF043523695DE200AB8CF5 /* AppDelegate.swift in Sources */,
 				46FF043F23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodeld in Sources */,
 				46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */,
+				46FF044E2369718500AB8CF5 /* HomeViewController.swift in Sources */,
+				46B703D023698EFF00231CB1 /* PhotoViewController.swift in Sources */,
+				467609D02369AFE800708588 /* AmuseViewController.swift in Sources */,
+				467609CE2369AF0C00708588 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
