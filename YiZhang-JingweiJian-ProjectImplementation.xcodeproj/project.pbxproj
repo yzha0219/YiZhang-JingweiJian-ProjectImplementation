@@ -13,6 +13,7 @@
 		467609D02369AFE800708588 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CF2369AFE800708588 /* AmuseViewController.swift */; };
 		467609D2236A9BA800708588 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609D1236A9BA800708588 /* PhotoTableViewController.swift */; };
 		467609D4236A9BE500708588 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609D3236A9BE500708588 /* PhotoTableViewCell.swift */; };
+		467609D6236B059F00708588 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609D5236B059F00708588 /* Delegates.swift */; };
 		46B703D023698EFF00231CB1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B703CF23698EFF00231CB1 /* PhotoViewController.swift */; };
 		46FF043523695DE200AB8CF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043423695DE100AB8CF5 /* AppDelegate.swift */; };
 		46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF043623695DE200AB8CF5 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		467609CF2369AFE800708588 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
 		467609D1236A9BA800708588 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		467609D3236A9BE500708588 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		467609D5236B059F00708588 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		46B703CF23698EFF00231CB1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		46FF043123695DE100AB8CF5 /* YiZhang-JingweiJian-ProjectImplementation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YiZhang-JingweiJian-ProjectImplementation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FF043423695DE100AB8CF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				467609CF2369AFE800708588 /* AmuseViewController.swift */,
 				467609D1236A9BA800708588 /* PhotoTableViewController.swift */,
 				467609D3236A9BE500708588 /* PhotoTableViewCell.swift */,
+				467609D5236B059F00708588 /* Delegates.swift */,
 			);
 			path = "YiZhang-JingweiJian-ProjectImplementation";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */,
 				46FF044E2369718500AB8CF5 /* HomeViewController.swift in Sources */,
 				46B703D023698EFF00231CB1 /* PhotoViewController.swift in Sources */,
+				467609D6236B059F00708588 /* Delegates.swift in Sources */,
 				467609D02369AFE800708588 /* AmuseViewController.swift in Sources */,
 				467609D2236A9BA800708588 /* PhotoTableViewController.swift in Sources */,
 				467609CE2369AF0C00708588 /* FeedViewController.swift in Sources */,

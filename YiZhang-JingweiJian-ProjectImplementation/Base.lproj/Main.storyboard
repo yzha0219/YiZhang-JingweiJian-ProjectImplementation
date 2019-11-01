@@ -68,7 +68,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vbJ-MQ-7Jm" kind="show" id="zyX-hU-iwP"/>
+                                    <segue destination="vbJ-MQ-7Jm" kind="show" identifier="photoList" id="zyX-hU-iwP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,8 +97,15 @@
                         <viewLayoutGuide key="safeArea" id="fhh-0C-nwO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo" image="photo" catalog="system" id="HfW-ci-Y43"/>
-                    <navigationItem key="navigationItem" title="Photo" id="EQj-iA-Ofn"/>
+                    <navigationItem key="navigationItem" title="Photo" id="EQj-iA-Ofn">
+                        <barButtonItem key="rightBarButtonItem" title="Save Photo" id="LZt-iX-6Th">
+                            <color key="tintColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="photoView" destination="CHQ-Gy-1nH" id="mAx-5t-DYH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09g-if-13W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="LvD-O9-dME" customClass="PhotoTableViewCell" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="86" id="LvD-O9-dME" customClass="PhotoTableViewCell" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LvD-O9-dME" id="8uy-YV-VSC">
@@ -139,14 +146,14 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2019-01-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L69-VI-18W">
-                                            <rect key="frame" x="152" y="46" width="122" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-01-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L69-VI-18W">
+                                            <rect key="frame" x="152" y="46" width="89.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Il-gk7">
-                                            <rect key="frame" x="152" y="10" width="110" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pi-Il-gk7">
+                                            <rect key="frame" x="152" y="10" width="71.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -154,6 +161,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4i8-b2-jcA" firstAttribute="top" secondItem="RYO-4L-jLQ" secondAttribute="bottom" constant="14" id="7aM-i6-XEe"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="L69-VI-18W" secondAttribute="trailing" constant="20" symbolic="YES" id="Aye-b0-dSx"/>
                                         <constraint firstItem="4i8-b2-jcA" firstAttribute="leading" secondItem="ZmK-PN-vCy" secondAttribute="trailing" constant="8" id="Br2-Fk-9X3"/>
                                         <constraint firstItem="ZmK-PN-vCy" firstAttribute="leading" secondItem="8uy-YV-VSC" secondAttribute="leading" constant="6" id="T15-hp-utp"/>
                                         <constraint firstItem="RYO-4L-jLQ" firstAttribute="leading" secondItem="ZmK-PN-vCy" secondAttribute="trailing" constant="8" id="aje-vC-Iqc"/>
@@ -164,12 +172,13 @@
                                         <constraint firstItem="RYO-4L-jLQ" firstAttribute="top" secondItem="8uy-YV-VSC" secondAttribute="topMargin" id="qJx-hN-c6x"/>
                                         <constraint firstItem="3Pi-Il-gk7" firstAttribute="leading" secondItem="RYO-4L-jLQ" secondAttribute="trailing" constant="8" id="tbg-3I-KDA"/>
                                         <constraint firstItem="L69-VI-18W" firstAttribute="top" secondItem="3Pi-Il-gk7" secondAttribute="bottom" constant="15" id="uXO-iu-4g8"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Pi-Il-gk7" secondAttribute="trailing" constant="20" symbolic="YES" id="zET-Cf-x6Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="L69-VI-18W" id="9WA-UC-wcx"/>
                                     <outlet property="photo" destination="ZmK-PN-vCy" id="Xzu-le-94U"/>
-                                    <outlet property="timeLable" destination="3Pi-Il-gk7" id="aXn-Ox-rsb"/>
+                                    <outlet property="timeLabel" destination="L69-VI-18W" id="GHU-uZ-mrw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
