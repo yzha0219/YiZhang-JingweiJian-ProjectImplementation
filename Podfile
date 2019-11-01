@@ -9,4 +9,7 @@ target 'YiZhang-JingweiJian-ProjectImplementation' do
   pod 'AWSCognito'
   pod 'AWSCore' 
   pod 'AWSS3'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 end

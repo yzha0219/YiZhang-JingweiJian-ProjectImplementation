@@ -22,6 +22,7 @@
 		46FF044123695DE300AB8CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FF044023695DE300AB8CF5 /* Assets.xcassets */; };
 		46FF044423695DE300AB8CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FF044223695DE300AB8CF5 /* LaunchScreen.storyboard */; };
 		46FF044E2369718500AB8CF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FF044D2369718500AB8CF5 /* HomeViewController.swift */; };
+		4E04D3F0236BE5E500F29E50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E04D3EF236BE5E500F29E50 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		46FF044323695DE300AB8CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46FF044523695DE300AB8CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FF044D2369718500AB8CF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4E04D3EF236BE5E500F29E50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YiZhang_JingweiJian_ProjectImplementation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FB3FFA16CA3BF0F66BD1BD /* Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.debug.xcconfig"; sourceTree = "<group>"; };
 		E35DBF82A238F37C2A338F01 /* Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; path = "Target Support Files/Pods-YiZhang-JingweiJian-ProjectImplementation/Pods-YiZhang-JingweiJian-ProjectImplementation.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		46FF043323695DE100AB8CF5 /* YiZhang-JingweiJian-ProjectImplementation */ = {
 			isa = PBXGroup;
 			children = (
+				4E04D3EF236BE5E500F29E50 /* GoogleService-Info.plist */,
 				46FF043423695DE100AB8CF5 /* AppDelegate.swift */,
 				46FF043623695DE200AB8CF5 /* SceneDelegate.swift */,
 				46FF043A23695DE200AB8CF5 /* Main.storyboard */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FF044423695DE300AB8CF5 /* LaunchScreen.storyboard in Resources */,
+				4E04D3F0236BE5E500F29E50 /* GoogleService-Info.plist in Resources */,
 				46FF044123695DE300AB8CF5 /* Assets.xcassets in Resources */,
 				46FF043C23695DE200AB8CF5 /* Main.storyboard in Resources */,
 			);

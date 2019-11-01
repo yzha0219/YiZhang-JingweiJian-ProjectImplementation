@@ -333,39 +333,26 @@
         <!--FeedScreen-->
         <scene sceneID="uTg-yE-rvo">
             <objects>
-                <viewController title="FeedScreen" id="e5F-2Q-MK8" customClass="AmuseViewController" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FeedScreen" id="e5F-2Q-MK8" customClass="FeedViewController" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OLd-PS-1lu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meat" translatesAutoresizingMaskIntoConstraints="NO" id="QAJ-UH-9fh">
-                                <rect key="frame" x="32" y="120" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="HHM-8e-Qad"/>
-                                    <constraint firstAttribute="height" constant="120" id="Hjk-lf-tJh"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop" translatesAutoresizingMaskIntoConstraints="NO" id="Sqv-se-kTI">
-                                <rect key="frame" x="32" y="272" width="120" height="120"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bowl" translatesAutoresizingMaskIntoConstraints="NO" id="Sqv-se-kTI">
+                                <rect key="frame" x="59" y="149" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="IHC-BZ-cJK"/>
                                     <constraint firstAttribute="height" constant="120" id="Pan-oF-H8M"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food left: Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ph-cL-rOf">
-                                <rect key="frame" x="193" y="152" width="133" height="26"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <color key="textColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water left: Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55z-iB-Hai">
-                                <rect key="frame" x="183.5" y="327" width="142.5" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Water left: Yes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55z-iB-Hai">
+                                <rect key="frame" x="199" y="204" width="195" height="26"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQl-uv-1W6">
-                                <rect key="frame" x="224" y="475" width="170" height="35"/>
+                                <rect key="frame" x="106" y="677" width="202" height="35"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Add Water">
@@ -378,47 +365,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqS-fn-6Ic">
-                                <rect key="frame" x="32" y="475" width="184" height="35"/>
-                                <color key="backgroundColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="184" id="E9X-Kc-SVV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" title="Add Food">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <color key="titleShadowColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the screen the update latest reocord" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZa-7C-aal">
+                                <rect key="frame" x="20" y="299" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="KqS-fn-6Ic" firstAttribute="baseline" secondItem="TQl-uv-1W6" secondAttribute="baseline" id="2C1-zR-mZQ"/>
-                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="TQl-uv-1W6" secondAttribute="trailing" constant="20" id="47c-8f-7vU"/>
-                            <constraint firstItem="QAJ-UH-9fh" firstAttribute="leading" secondItem="hLn-NY-eje" secondAttribute="leading" constant="32" id="4lA-uW-5SN"/>
-                            <constraint firstItem="QAJ-UH-9fh" firstAttribute="top" secondItem="hLn-NY-eje" secondAttribute="top" constant="32" id="5fF-oI-VmR"/>
-                            <constraint firstItem="55z-iB-Hai" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sqv-se-kTI" secondAttribute="trailing" constant="8" symbolic="YES" id="7nb-10-V4V"/>
-                            <constraint firstItem="TQl-uv-1W6" firstAttribute="top" secondItem="55z-iB-Hai" secondAttribute="bottom" constant="122" id="FNa-5U-W8F"/>
-                            <constraint firstItem="Sqv-se-kTI" firstAttribute="top" secondItem="QAJ-UH-9fh" secondAttribute="bottom" constant="32" id="JCj-Rx-kkC"/>
-                            <constraint firstItem="55z-iB-Hai" firstAttribute="top" secondItem="2ph-cL-rOf" secondAttribute="bottom" constant="149" id="TJv-tx-LV1"/>
-                            <constraint firstItem="KqS-fn-6Ic" firstAttribute="leading" secondItem="Sqv-se-kTI" secondAttribute="leading" id="c1c-Bp-2if"/>
-                            <constraint firstItem="Sqv-se-kTI" firstAttribute="leading" secondItem="hLn-NY-eje" secondAttribute="leading" constant="32" id="eDX-ut-TfV"/>
-                            <constraint firstItem="2ph-cL-rOf" firstAttribute="top" secondItem="hLn-NY-eje" secondAttribute="top" constant="64" id="fDw-ww-C3z"/>
-                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="2ph-cL-rOf" secondAttribute="trailing" constant="88" id="fHu-nr-U0T"/>
-                            <constraint firstItem="TQl-uv-1W6" firstAttribute="leading" secondItem="KqS-fn-6Ic" secondAttribute="trailing" constant="8" symbolic="YES" id="fVQ-VZ-RGJ"/>
-                            <constraint firstItem="2ph-cL-rOf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QAJ-UH-9fh" secondAttribute="trailing" constant="8" symbolic="YES" id="qEM-rc-f89"/>
-                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="55z-iB-Hai" secondAttribute="trailing" constant="88" id="rx1-Wc-gCx"/>
+                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="uZa-7C-aal" secondAttribute="trailing" constant="20" id="0AT-ET-xsI"/>
+                            <constraint firstItem="55z-iB-Hai" firstAttribute="top" secondItem="hLn-NY-eje" secondAttribute="top" constant="116" id="3Cy-gd-PwI"/>
+                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="55z-iB-Hai" secondAttribute="trailing" constant="20" id="E35-e1-Jfr"/>
+                            <constraint firstItem="Sqv-se-kTI" firstAttribute="top" secondItem="hLn-NY-eje" secondAttribute="top" constant="61" id="G54-OX-vC8"/>
+                            <constraint firstItem="TQl-uv-1W6" firstAttribute="leading" secondItem="hLn-NY-eje" secondAttribute="leading" constant="106" id="Qbo-lh-tbo"/>
+                            <constraint firstItem="55z-iB-Hai" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sqv-se-kTI" secondAttribute="trailing" constant="8" symbolic="YES" id="Qty-q3-3aE"/>
+                            <constraint firstItem="uZa-7C-aal" firstAttribute="top" secondItem="Sqv-se-kTI" secondAttribute="bottom" constant="30" id="cUT-mh-ced"/>
+                            <constraint firstItem="Sqv-se-kTI" firstAttribute="leading" secondItem="hLn-NY-eje" secondAttribute="leading" constant="59" id="eDX-ut-TfV"/>
+                            <constraint firstItem="uZa-7C-aal" firstAttribute="leading" secondItem="hLn-NY-eje" secondAttribute="leading" constant="20" id="lMk-vN-7ZS"/>
+                            <constraint firstItem="hLn-NY-eje" firstAttribute="trailing" secondItem="TQl-uv-1W6" secondAttribute="trailing" constant="106" id="tcd-0Z-PXN"/>
+                            <constraint firstItem="TQl-uv-1W6" firstAttribute="top" secondItem="Sqv-se-kTI" secondAttribute="bottom" constant="408" id="zsX-DA-ea5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hLn-NY-eje"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="dog-food" id="tQ5-tj-eTi"/>
                     <navigationItem key="navigationItem" title="Feed" id="C88-Bu-xci"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="waterLabel" destination="55z-iB-Hai" id="CtS-UL-VKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljC-av-wbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,7 +402,7 @@
         <!--Amuse-->
         <scene sceneID="9be-IH-AB1">
             <objects>
-                <viewController title="Amuse" id="gUQ-qF-5u5" customClass="FeedViewController" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Amuse" id="gUQ-qF-5u5" customClass="AmuseViewController" customModule="YiZhang_JingweiJian_ProjectImplementation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V3g-pW-Qma">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -639,12 +614,11 @@
     </scenes>
     <resources>
         <image name="about-us" width="40" height="40"/>
+        <image name="bowl" width="512" height="512"/>
         <image name="dog-food" width="36" height="36"/>
         <image name="dogs" width="4204" height="6306"/>
-        <image name="drop" width="512" height="512"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="idea-exchange" width="512" height="512"/>
-        <image name="meat" width="512" height="512"/>
         <image name="mouse-toy-2" width="34" height="34"/>
         <image name="music-player" width="512" height="512"/>
         <image name="photo" catalog="system" width="64" height="46"/>
