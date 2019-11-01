@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>683283512499-6t33trm8jeogfad11ugp83p9fs3055vf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.683283512499-6t33trm8jeogfad11ugp83p9fs3055vf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZ1vxDWpAP1kwTvEPRn_pAFEwkp3L9i7g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>683283512499</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>monash.edu.YiZhang-JingweiJian-ProjectImplementation</string>
+	<key>PROJECT_ID</key>
+	<string>fit5140-ass2-963d6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fit5140-ass2-963d6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:683283512499:ios:66d5ec4314c09685d4c4c6</string>
+	<key>DATABASE_URL</key>
+	<string>https://fit5140-ass2-963d6.firebaseio.com</string>
+</dict>
+</plist>
