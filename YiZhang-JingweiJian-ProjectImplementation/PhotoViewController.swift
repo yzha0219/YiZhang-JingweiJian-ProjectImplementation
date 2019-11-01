@@ -12,7 +12,7 @@ import AWSCognito
 import AWSS3
 
 
-class PhotoViewController: UIViewController, PhotoDelegate {
+class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegate {
 
     var filenames: [AWSS3Object] = []
     @IBOutlet weak var photoView: UIImageView!
@@ -48,10 +48,35 @@ class PhotoViewController: UIViewController, PhotoDelegate {
         }
     }
     
+    func savePhoto(){
+        UIImageWriteToSavedPhotosAlbum(photoView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began{
+            let alert = UIAlertController()
+            alert.addAction(UIAlertAction(title: "Save Photo", style: .default){(action: UIAlertAction!) in
+                self.savePhoto()
+            })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func updatePhoto(image: UIImage) {
         photoView.image = image
     }
     
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer){
+        if let error = error {
+            let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+        } else {
+            let ac = UIAlertController(title: "Photo has been saved!", message: error?.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -63,6 +88,14 @@ class PhotoViewController: UIViewController, PhotoDelegate {
             destination.filenames = filenames
             destination.photoDelegate = self
         }
+    }
+    
+    func displayMessage(_ title: String,_ message: String) {
+        // Setup an alert to show user details about the Person
+        // UIAlertController manages an alert instance
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
 

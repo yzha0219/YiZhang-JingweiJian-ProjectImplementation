@@ -21,13 +21,17 @@
                                 <color key="textColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogs" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-Gy-1nH">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogs" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-Gy-1nH">
                                 <rect key="frame" x="32" y="181" width="350" height="450"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="7dO-78-rhR"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="KKo-fq-ibb"/>
                                     <constraint firstAttribute="height" constant="450" id="va7-Eq-jPy"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Kaz-PK-FBs" appends="YES" id="whE-1V-rUy"/>
+                                </connections>
                             </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mki-hr-oTn">
                                 <rect key="frame" x="235" y="658" width="51" height="31"/>
@@ -98,7 +102,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo" image="photo" catalog="system" id="HfW-ci-Y43"/>
                     <navigationItem key="navigationItem" title="Photo" id="EQj-iA-Ofn">
-                        <barButtonItem key="rightBarButtonItem" title="Save Photo" id="LZt-iX-6Th">
+                        <barButtonItem key="rightBarButtonItem" image="video" catalog="system" id="LZt-iX-6Th">
                             <color key="tintColor" red="0.050980392159999999" green="0.6588235294" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                     </navigationItem>
@@ -108,6 +112,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09g-if-13W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Kaz-PK-FBs">
+                    <connections>
+                        <action selector="handleLongPress:" destination="cKg-GY-IC5" id="hGq-uA-RQA"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2373.913043478261" y="-706.47321428571422"/>
         </scene>
@@ -192,7 +201,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4l-DO-oC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240.579710144928" y="-706.47321428571422"/>
+            <point key="canvasLocation" x="3241" y="-706"/>
         </scene>
         <!--HomeScreen-->
         <scene sceneID="ysY-m1-NzZ">
@@ -422,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljC-av-wbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.3188405797102" y="750.66964285714278"/>
+            <point key="canvasLocation" x="2372.463768115942" y="750.66964285714278"/>
         </scene>
         <!--Amuse-->
         <scene sceneID="9be-IH-AB1">
@@ -516,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bo-Ub-aSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373.913043478261" y="1514.7321428571429"/>
+            <point key="canvasLocation" x="3284.057971014493" y="1514.7321428571429"/>
         </scene>
         <!--Item-->
         <scene sceneID="9zi-JO-LbX">
@@ -554,7 +563,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJ9-W1-SXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="751"/>
+            <point key="canvasLocation" x="1231.8840579710145" y="750.66964285714278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Rei-RG-rVA">
@@ -615,7 +624,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLG-Jk-9of" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="1515"/>
+            <point key="canvasLocation" x="2371.0144927536235" y="1514.7321428571429"/>
         </scene>
         <!--Item-->
         <scene sceneID="568-fB-3Fw">
@@ -648,5 +657,6 @@
         <image name="mouse-toy-2" width="34" height="34"/>
         <image name="music-player" width="512" height="512"/>
         <image name="photo" catalog="system" width="64" height="46"/>
+        <image name="video" catalog="system" width="64" height="40"/>
     </resources>
 </document>
