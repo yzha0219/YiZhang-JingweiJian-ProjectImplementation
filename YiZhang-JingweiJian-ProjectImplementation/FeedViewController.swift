@@ -95,6 +95,11 @@ class FeedViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
+        ref.observe(.childChanged){ snapshot in
+            appDelegate!.handleEvent()
+        }
                 
     }
     
@@ -145,6 +150,10 @@ class FeedViewController: UIViewController {
         
     }
 
+    @IBAction func addWater(_ sender: Any) {
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
+        ref.child("addWater").setValue(["status": "open"])
+    }
     /*
     // MARK: - Navigation
 

@@ -9,14 +9,21 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseDatabase
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        let options: UNAuthorizationOptions = [.badge, .sound, .alert]
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: options) { success, error in
+                if let error = error {
+                    print("Error: \(error)")
+                }
+        }
         return true
     }
 
@@ -32,6 +39,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    //Trigger the notification
+    func handleEvent() {
+        // Show an alert if application is active
+        if UIApplication.shared.applicationState == .active {
+            //window?.rootViewController?.showAlert(withTitle: nil, message: message)
+            return
+        } else {
+            // Otherwise present a local notification
+            let body = "Pet has been detected, and the photo of it has been taken as well!"
+            let notificationContent = UNMutableNotificationContent()
+            notificationContent.body = body
+            notificationContent.sound = UNNotificationSound.default
+            notificationContent.badge = UIApplication.shared.applicationIconBadgeNumber + 1 as NSNumber
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "pet_detected",
+                                                content: notificationContent,
+                                                trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error: \(error)")
+                }
+            }
+        }
     }
 
     // MARK: - Core Data stack

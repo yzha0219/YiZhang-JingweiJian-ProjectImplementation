@@ -10,9 +10,12 @@ import UIKit
 import AWSCore
 import AWSCognito
 import AWSS3
+import Firebase
+import FirebaseDatabase
 
 class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
     
+    var ref: DatabaseReference!
     var filenames: [AWSS3Object] = []
     var filterFilenames: [AWSS3Object] = []
     var photoDelegate: PhotoDelegate?
@@ -32,6 +35,12 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
         navigationItem.searchController = searchController
         
         definesPresentationContext = true
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
+        ref.observe(.childChanged){ snapshot in
+            appDelegate!.handleEvent()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
     // MARK: - Table view data source

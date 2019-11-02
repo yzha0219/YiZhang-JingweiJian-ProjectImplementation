@@ -10,4 +10,5 @@ import Foundation
 import UIKit
 protocol PhotoDelegate: AnyObject{
     func updatePhoto(image: UIImage)
+    func readFilenames()
 }

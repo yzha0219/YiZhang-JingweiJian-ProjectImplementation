@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class AboutViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,11 @@ class AboutViewController: UIViewController {
         backgroundImageView.alpha = 0.3
 
         self.view.insertSubview(backgroundImageView, at: 0)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
+        ref.observe(.childChanged){ snapshot in
+            appDelegate!.handleEvent()
+        }
     }
     
 
