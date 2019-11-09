@@ -31,7 +31,7 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
         let searchController = UISearchController(searchResultsController: nil);
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Location"
+        searchController.searchBar.placeholder = "Search Photo"
         navigationItem.searchController = searchController
         
         definesPresentationContext = true
