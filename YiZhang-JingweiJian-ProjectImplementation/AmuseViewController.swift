@@ -30,6 +30,7 @@ class AmuseViewController: UIViewController {
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
         ref.observe(.childChanged){ snapshot in
             appDelegate!.handleEvent()
+            self.displayMessage("Detected","Pet has been detected, and the photo of it has been taken as well!")
         }
     }
     
@@ -51,6 +52,14 @@ class AmuseViewController: UIViewController {
         }
     }
     
+    
+    func displayMessage(_ title: String,_ message: String) {
+        // Setup an alert to show user details about the Person
+        // UIAlertController manages an alert instance
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

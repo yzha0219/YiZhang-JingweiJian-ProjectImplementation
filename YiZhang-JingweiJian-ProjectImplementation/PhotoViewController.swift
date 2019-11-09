@@ -34,14 +34,17 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         
         readFilenames()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
-        ref.observe(.childChanged){ snapshot in
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/")
+        ref.child("Detect").observe(.childChanged){ snapshot in
             appDelegate!.handleEvent()
+            self.displayMessage("Detected","Pet has been detected, and the photo of it has been taken as well!")
+        }
+        ref.child("detectPhoto").observe(.childChanged){ snapshot in
             self.readFilenames()
-            let photo = snapshot.value as! NSDictionary
+            let photo = snapshot.value
             let transferUtility = AWSS3TransferUtility.default()
             let expression = AWSS3TransferUtilityDownloadExpression()
-            transferUtility.downloadData(fromBucket: "petsitter1", key: photo["filename"] as! String, expression: expression){(task, url, data, error) in
+            transferUtility.downloadData(fromBucket: "petsitter1", key: photo! as! String, expression: expression){(task, url, data, error) in
                 if error != nil{
                     print(error!)
                     return
@@ -95,12 +98,11 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         let year = components.year
         let month = components.month
         let day = components.day
-        let hour = components.hour
-        let minute = components.minute
-        let second = components.second
+//        let hour = components.hour
+//        let minute = components.minute
+//        let second = components.second
 
-        let today_string = String(year!) + "-" + String(month!) + "-" + String(day!) + " " + String(hour!)  + ":" + String(minute!) + ":" +  String(second!)
-
+        let today_string = String(year!) + "-" + String(month!) + "-" + String(day!)
         return today_string
 
     }
