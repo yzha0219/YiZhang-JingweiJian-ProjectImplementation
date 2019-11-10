@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31EF57B0F56AEF6ADEE50FA6 /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EADEDDCEBEDBA8976F63EA /* Pods_YiZhang_JingweiJian_ProjectImplementation.framework */; };
+		4610DC132376DF5500C9A94E /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610DC122376DF5500C9A94E /* VideoTableViewCell.swift */; };
+		466476AE2377A3300063BDF7 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466476AD2377A3300063BDF7 /* VideoTableViewController.swift */; };
 		467609CC2369A92A00708588 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CB2369A92A00708588 /* AboutViewController.swift */; };
 		467609CE2369AF0C00708588 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CD2369AF0C00708588 /* FeedViewController.swift */; };
 		467609D02369AFE800708588 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467609CF2369AFE800708588 /* AmuseViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4610DC122376DF5500C9A94E /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		466476AD2377A3300063BDF7 /* VideoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		467609CB2369A92A00708588 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		467609CD2369AF0C00708588 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		467609CF2369AFE800708588 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				46FF043423695DE100AB8CF5 /* AppDelegate.swift */,
 				46FF043623695DE200AB8CF5 /* SceneDelegate.swift */,
 				46FF043A23695DE200AB8CF5 /* Main.storyboard */,
+				4610DC122376DF5500C9A94E /* VideoTableViewCell.swift */,
 				46FF044023695DE300AB8CF5 /* Assets.xcassets */,
 				46FF044223695DE300AB8CF5 /* LaunchScreen.storyboard */,
 				46FF044523695DE300AB8CF5 /* Info.plist */,
@@ -97,6 +102,7 @@
 				467609D1236A9BA800708588 /* PhotoTableViewController.swift */,
 				467609D3236A9BE500708588 /* PhotoTableViewCell.swift */,
 				467609D5236B059F00708588 /* Delegates.swift */,
+				466476AD2377A3300063BDF7 /* VideoTableViewController.swift */,
 			);
 			path = "YiZhang-JingweiJian-ProjectImplementation";
 			sourceTree = "<group>";
@@ -235,10 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				467609D4236A9BE500708588 /* PhotoTableViewCell.swift in Sources */,
+				4610DC132376DF5500C9A94E /* VideoTableViewCell.swift in Sources */,
 				467609CC2369A92A00708588 /* AboutViewController.swift in Sources */,
 				46FF043523695DE200AB8CF5 /* AppDelegate.swift in Sources */,
 				46FF043F23695DE200AB8CF5 /* YiZhang_JingweiJian_ProjectImplementation.xcdatamodeld in Sources */,
 				46FF043723695DE200AB8CF5 /* SceneDelegate.swift in Sources */,
+				466476AE2377A3300063BDF7 /* VideoTableViewController.swift in Sources */,
 				46FF044E2369718500AB8CF5 /* HomeViewController.swift in Sources */,
 				46B703D023698EFF00231CB1 /* PhotoViewController.swift in Sources */,
 				467609D6236B059F00708588 /* Delegates.swift in Sources */,

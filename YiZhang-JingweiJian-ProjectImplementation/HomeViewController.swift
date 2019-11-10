@@ -25,14 +25,15 @@ class HomeViewController: UIViewController {
         backgroundImageView.image = backgroundImage
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.alpha = 0.3
-
         self.view.insertSubview(backgroundImageView, at: 0)
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
         ref.observe(.childChanged){ snapshot in
+            print("detect")
             appDelegate!.handleEvent()
             self.displayMessage("Detected","Pet has been detected, and the photo of it has been taken as well!")
         }
+        
     }
     
     func displayMessage(_ title: String,_ message: String) {

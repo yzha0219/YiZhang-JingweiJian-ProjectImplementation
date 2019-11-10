@@ -31,9 +31,9 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
         let searchController = UISearchController(searchResultsController: nil);
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Photo"
+        searchController.searchBar.placeholder = "By Date&Time \"XXXX-XX-XX XX:XX:XX\""
         navigationItem.searchController = searchController
-        
+        filterFilenames = filenames
         definesPresentationContext = true
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
@@ -53,7 +53,7 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return filenames.count
+        return filterFilenames.count
     }
 
     
@@ -61,11 +61,14 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
         let photoCell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath) as! PhotoTableViewCell
 
         // Configure the cell...
-        let photo = filenames[indexPath.row]
-        photoCell.timeLabel.text = photo.key!
+        let photo = filterFilenames[indexPath.row].key!.split(separator: " ")
+        let date = photo[0]
+        let time = photo[1]
+        photoCell.dateLabel.text = String(date)
+        photoCell.timeLabel.text = String(time)
         let transferUtility = AWSS3TransferUtility.default()
         let expression = AWSS3TransferUtilityDownloadExpression()
-        transferUtility.downloadData(fromBucket: "petsitter1", key: photo.key!, expression: expression){(task, url, data, error) in
+        transferUtility.downloadData(fromBucket: "petsitter1", key: filterFilenames[indexPath.row].key!, expression: expression){(task, url, data, error) in
             if error != nil{
                 print(error!)
                 return
@@ -78,6 +81,14 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, searchText.count > 0 {
+            filterFilenames = filenames.filter({(photo: AWSS3Object) -> Bool in
+                return photo.key!.contains(searchText)
+            })
+        }
+        else {
+            filterFilenames = filenames
+        }
         tableView.reloadData()
     }
 
@@ -94,7 +105,8 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
                 self.photoDelegate!.updatePhoto(image: UIImage(data: data!)!)
             })
         }
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
         return
     }
     

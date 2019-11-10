@@ -13,10 +13,12 @@ import AWSS3
 import Firebase
 import FirebaseDatabase
 
-class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegate {
+class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegate,UIPopoverPresentationControllerDelegate {
 
     var filenames: [AWSS3Object] = []
+    var videos: [AWSS3Object] = []
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var progressBar: UIProgressView!
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
@@ -33,17 +35,26 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         self.view.insertSubview(backgroundImageView, at: 0)
         
         readFilenames()
+        readFilenames2()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/")
         ref.child("Detect").observe(.childChanged){ snapshot in
             appDelegate!.handleEvent()
             self.displayMessage("Detected","Pet has been detected, and the photo of it has been taken as well!")
         }
+        ref.child("detect").child("video").observe(.childChanged){ snapshot in
+            if snapshot.value as! String == "close"{
+                self.displayMessage("Success!", "The video has been recorded!")
+            }
+        }
         ref.child("detectPhoto").observe(.childChanged){ snapshot in
             self.readFilenames()
             let photo = snapshot.value
             let transferUtility = AWSS3TransferUtility.default()
             let expression = AWSS3TransferUtilityDownloadExpression()
+            expression.progressBlock = {(task, progress) in DispatchQueue.main.async(execute: {
+                self.progressBar.progress = Float(progress.fractionCompleted)
+            })}
             transferUtility.downloadData(fromBucket: "petsitter1", key: photo! as! String, expression: expression){(task, url, data, error) in
                 if error != nil{
                     print(error!)
@@ -51,6 +62,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
                 }
                 DispatchQueue.main.async(execute: {
                     self.photoView.image = UIImage(data: data!)!
+                    self.displayMessage("Success!","Loading Taken Photo Completed!")
                 })
             }
         }
@@ -72,6 +84,11 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
     @IBAction func takePhoto(_ sender: Any) {
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
         ref.child("photo").setValue(["status": "open"])
+    }
+    
+    @IBAction func takeVideo(_ sender: Any) {
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
+        ref.child("video").setValue(["status": "open"])
     }
     
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
@@ -141,6 +158,34 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
             return nil
         }
     }
+    
+    func readFilenames2(){
+        let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAISLISPY3FEGC7PFQ", secretKey: "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")
+
+        let configuration = AWSServiceConfiguration(region:.APSoutheast2, credentialsProvider:credentialsProvider)
+               
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+              
+        AWSS3.register(with: configuration!, forKey: "USWest2S3")
+        let s3 = AWSS3.s3(forKey: "USWest2S3")
+               
+        let listRequest: AWSS3ListObjectsRequest = AWSS3ListObjectsRequest()
+        listRequest.bucket = "petsitter2"
+               
+        s3.listObjects(listRequest).continueWith { (task) -> AnyObject? in
+            //print(task.error)
+            self.videos = (task.result?.contents!)!
+            return nil
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.fullScreen
+    }
+
+    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        return UINavigationController(rootViewController: controller.presentedViewController)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -151,6 +196,13 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
             let destination = segue.destination as! PhotoTableViewController
             destination.filenames = filenames
             destination.photoDelegate = self
+            let popPC = destination.popoverPresentationController
+            popPC?.delegate = self
+        } else if segue.identifier == "videoSegue"{
+            let destination = segue.destination as! VideoTableViewController
+            destination.videos = videos
+            let popPC = destination.popoverPresentationController
+            popPC?.delegate = self
         }
     }
     

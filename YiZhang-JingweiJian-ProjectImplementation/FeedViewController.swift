@@ -74,7 +74,6 @@ class FeedViewController: UIViewController {
         ref.child("\(current_date)").observeSingleEvent(of: .value, with: { (snapshot) in
             //print(snapshot)
             if let dict = snapshot.value as? Array<Any> {
-                print(dict)
                 let lastDict = dict.last as! [String:AnyObject]
                 let percent = lastDict["percent"] as! Double
                 self.refreshPercentage(percent: percent)
@@ -96,12 +95,16 @@ class FeedViewController: UIViewController {
             print(error.localizedDescription)
         }
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("Detect")
-        ref.observe(.childChanged){ snapshot in
+        ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/")
+        ref.child("Detect").observe(.childChanged){ snapshot in
             appDelegate!.handleEvent()
             self.displayMessage("Detected","Pet has been detected, and the photo of it has been taken as well!")
         }
-                
+        ref.child("detect").child("addWater").observe(.childChanged){ snapshot in
+            if snapshot.value as! String == "close"{
+                self.displayMessage("Success!", "The water has been filled up!")
+            }
+        }
     }
     
     private func refreshPercentage(percent:Double) {
@@ -111,7 +114,7 @@ class FeedViewController: UIViewController {
             self.percentageLabel.text = "0"
         }else{
             DispatchQueue.main.async {
-                self.percentageLabel.text = "\(Int(percentage))%"
+                self.percentageLabel.text = "\(Int(percentage * 100))%"
                 self.shapeLayer.strokeEnd = CGFloat(percentage)
             }
         }
@@ -163,6 +166,7 @@ class FeedViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 
