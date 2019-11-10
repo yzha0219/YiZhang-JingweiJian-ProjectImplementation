@@ -402,7 +402,7 @@
                                     <constraint firstAttribute="height" constant="142" id="9oU-Gg-V2t"/>
                                     <constraint firstAttribute="width" constant="331" id="g8n-Wh-QoX"/>
                                 </constraints>
-                                <string key="text">This application aims to help users to take care of their pets when they are having a business trip or leisure trip. The whole system includes functions like feeding water and food, real-time monitor and amusing users’ pets.</string>
+                                <string key="text">This application aims to help users to take care of their pets when they are having a business trip or leisure trip. The whole system includes functions like feeding water, real-time monitor and amusing users’ pets.</string>
                                 <color key="textColor" red="0.034921903429999998" green="0.50612502059999998" blue="0.57037221930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -436,7 +436,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Name: Jingwei Jian Student ID: 28516702 Occupation: Back End" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-8f-a4V">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Name: Jingwei Jian Student ID: 28733150 Occupation: Back End" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-8f-a4V">
                                 <rect key="frame" x="126" y="549" width="268" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="W7D-4Q-D92"/>

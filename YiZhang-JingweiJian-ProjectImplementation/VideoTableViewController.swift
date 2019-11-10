@@ -87,6 +87,7 @@ class VideoTableViewController: UITableViewController,UISearchResultsUpdating {
         }
     }
     
+    //Convert special characters in the path
     func decodePath(videoName: String) -> String {
         let newPath1 = videoName.replacingOccurrences(of: " ", with: "+")
         let newPath2 = newPath1.replacingOccurrences(of: ":", with: "%3A")
