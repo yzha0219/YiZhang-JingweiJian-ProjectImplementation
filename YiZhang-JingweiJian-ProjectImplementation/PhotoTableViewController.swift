@@ -80,6 +80,7 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
         return photoCell
     }
     
+    //Update the table view by search result
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, searchText.count > 0 {
             filterFilenames = filenames.filter({(photo: AWSS3Object) -> Bool in
@@ -130,12 +131,30 @@ class PhotoTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            let photo = filterFilenames[indexPath.row].key
+            deleteS3File(key: photo!)
+        }
+//        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//        }
+        tableView.reloadData()
     }
     */
+    
+//    func deleteS3File(key:String){
+//        let s3 = AWSS3.default()
+//        let deleteObjectRequest = AWSS3DeleteObjectRequest()
+//        deleteObjectRequest!.bucket = "petsitter1"
+//        deleteObjectRequest!.key = key
+//        s3.deleteObject(deleteObjectRequest!).continueWith { (task:AWSTask) -> AnyObject? in
+//            if let error = task.error {
+//                print("Error occurred: \(error)")
+//                return nil
+//            }
+//            print("Deleted successfully.")
+//            return nil
+//        }
+//    }
 
     /*
     // Override to support rearranging the table view.

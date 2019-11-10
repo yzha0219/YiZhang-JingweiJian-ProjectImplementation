@@ -45,6 +45,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         ref.child("detect").child("video").observe(.childChanged){ snapshot in
             if snapshot.value as! String == "close"{
                 self.displayMessage("Success!", "The video has been recorded!")
+                self.readFilenames2()
             }
         }
         ref.child("detectPhoto").observe(.childChanged){ snapshot in
@@ -68,6 +69,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //The button for switching on or off the flashlight
     @IBAction func flashSwitch(_ sender: UISwitch) {
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
         if sender.isOn {
@@ -77,20 +79,24 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //Save photo to the library
     func savePhoto(){
         UIImageWriteToSavedPhotosAlbum(photoView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
+    //The button for taking photo
     @IBAction func takePhoto(_ sender: Any) {
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
         ref.child("photo").setValue(["status": "open"])
     }
     
+    //The button for taking video
     @IBAction func takeVideo(_ sender: Any) {
         ref = Database.database().reference(fromURL: "https://fit5140-ass2-963d6.firebaseio.com/").child("detect")
         ref.child("video").setValue(["status": "open"])
     }
     
+    //Longpress gesture, ask user whether to save the photo to the library
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began{
             let alert = UIAlertController()
@@ -124,10 +130,12 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
 
     }
     
+    //update the imageView
     func updatePhoto(image: UIImage) {
         photoView.image = image
     }
     
+    //Alert for asking user whether save the photo to the library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer){
         if let error = error {
             let ac = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -139,6 +147,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //Read all photo name in the AWSS3
     func readFilenames(){
         let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAISLISPY3FEGC7PFQ", secretKey: "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")
 
@@ -159,6 +168,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //Read all video name in the AWSS3
     func readFilenames2(){
         let credentialsProvider = AWSStaticCredentialsProvider(accessKey: "AKIAISLISPY3FEGC7PFQ", secretKey: "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")
 
@@ -179,10 +189,12 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //Display the navigation bar in the popover table view
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.fullScreen
     }
 
+    //Display the navigation bar in the popover table view
     func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
         return UINavigationController(rootViewController: controller.presentedViewController)
     }
@@ -206,6 +218,7 @@ class PhotoViewController: UIViewController, PhotoDelegate, UIActionSheetDelegat
         }
     }
     
+    //Pop up customized message
     func displayMessage(_ title: String,_ message: String) {
         // Setup an alert to show user details about the Person
         // UIAlertController manages an alert instance

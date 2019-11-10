@@ -107,6 +107,7 @@ class FeedViewController: UIViewController {
         }
     }
     
+    //Refresh the water level for monitoring
     private func refreshPercentage(percent:Double) {
         let percentage = percent
         if percentage == 200{
@@ -120,7 +121,7 @@ class FeedViewController: UIViewController {
         }
     }
 
-    
+    //Tap the screen to trigger
     @objc private func handleTap() {
         let date = Date()
         let formatter = DateFormatter()
